@@ -4,14 +4,27 @@ import instagramIcon from "../assets/Homepage/icon-instagram.svg";
 import mhkLogo from "../assets/Homepage/mhk-logo.svg";
 import shoppingCartLogo from "../assets/Homepage/shopping-cart.png";
 import Menu from "./menu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const [showMenu, setShowmenu] = useState(false);
-  console.log(showMenu);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 80);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 w-full px-4">
-      <div className="max-w-[81.25rem] h-[5.0625rem] mt-[1.875rem] mx-auto md:border-white md:border-b">
+    <header
+      className={`${
+        scrolled ? "bg-black" : "bg-transparent"
+      } fixed top-0 w-full px-4 z-50`}
+    >
+      <div className="max-w-[81.25rem] h-[3.4625rem]  md:h-[5.0625rem] mt-[1.875rem] mx-auto md:border-white md:border-b">
         <div className="md:hidden flex justify-between items-center">
           <button
             onClick={() => setShowmenu(!showMenu)}
@@ -48,21 +61,42 @@ const Header = () => {
             </a>
           </div>
           <div className="flex items-center gap-4 text-white uppercase">
-            <a href="#">shop</a>
-            <a href="#">plan my kitchen</a>
+            <a
+              href="#"
+              className="hover:text-[#d4b254] transition text-[0.8125rem]"
+            >
+              shop
+            </a>
+            <a
+              href="#"
+              className="hover:text-[#d4b254] transition text-[0.8125rem]"
+            >
+              plan my kitchen
+            </a>
           </div>
           <a href="#">
             <img src={mhkLogo} alt="mhk logo" className="h-8" />
           </a>
           <div className="flex items-center gap-4 text-white uppercase">
-            <a href="#">about us</a>
-            <a href="#">gallery</a>
+            <a
+              href="#"
+              className="hover:text-[#d4b254] transition text-[0.8125rem]"
+            >
+              about us
+            </a>
+            <a
+              href="#"
+              className="hover:text-[#d4b254] transition text-[0.8125rem]"
+            >
+              gallery
+            </a>
           </div>
           <a
             href="#"
-            className="w-[12rem] uppercase h-[3.125rem] border border-white rounded-3xl flex items-center justify-center text-white gap-4"
+            className="group w-[12rem] uppercase h-[3.125rem] border border-white hover:border-[#d4b254] transition rounded-3xl flex items-center justify-center text-white gap-4"
           >
-            my order <img src={shoppingCartLogo} alt="shopping cart" />
+            <span className="group-hover:text-[#d4b254]">my order </span>
+            <img src={shoppingCartLogo} alt="shopping cart" />
           </a>
         </nav>
       </div>
