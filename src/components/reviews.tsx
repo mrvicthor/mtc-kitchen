@@ -3,6 +3,7 @@ import arrowLeft from "../assets/Homepage/icon-arrow-left.svg";
 import arrowRight from "../assets/Homepage/icon-arrow-right.svg";
 import { useState } from "react";
 import Button from "./shared/button";
+import { variants } from "../utils";
 
 const reviews = [
   {
@@ -27,16 +28,17 @@ const reviews = [
 
 const Reviews = () => {
   const [activeIndex, setActiveIndex] = useState(1);
+  const [direction, setDirection] = useState(0);
 
-  const handleNext = () =>
-    activeIndex === reviews.length
-      ? setActiveIndex(1)
-      : setActiveIndex((prevIndex) => prevIndex + 1);
+  const handleNext = () => {
+    setDirection(1);
+    setActiveIndex((prev) => (prev + 1) % reviews.length);
+  };
 
-  const handlePrevious = () =>
-    activeIndex === 1
-      ? setActiveIndex(reviews.length)
-      : setActiveIndex((prevIndex) => prevIndex - 1);
+  const handlePrevious = () => {
+    setDirection(-1);
+    setActiveIndex((prev) => (prev === 0 ? reviews.length - 1 : prev - 1));
+  };
 
   return (
     <section className="h-[37.5rem] flex flex-col items-center justify-center bg-[#eeeeee]">
@@ -46,36 +48,35 @@ const Reviews = () => {
         </button>
 
         <div className="flex flex-col max-w-[37.5rem]">
-          <p className="uppercase text-[0.8125rem] text-[#d4b254] text-center">
+          <p className="uppercase text-[0.8125rem] text-[#d4b254] md:text-center">
             what our customers say
           </p>
-          <p className="text-2xl md:text-[2rem] text-[#222222] text-center">
+          <p className="text-lg md:text-[2rem] text-[#222222] md:text-center">
             Over 35 years experience designing handmade kitchens
           </p>
-          <div className="mt-6 flex flex-col items-center">
-            <AnimatePresence mode="wait">
-              {reviews.map((review) =>
-                activeIndex === review.id ? (
-                  <motion.article
-                    key={review.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    <p className="text-[#777777] text-lg text-center">
-                      {review.review}
-                    </p>
-                    <p className="text-center text-[#777777] text-[0.9375rem] mt-[0.6875rem]">
-                      {review.reviewer}
-                    </p>
-                  </motion.article>
-                ) : null
-              )}
+          <div className="mt-6 flex flex-col items-center relative overflow-hidden h-[18rem] lg:h-[12.6875rem]">
+            <AnimatePresence mode="wait" custom={direction}>
+              <motion.article
+                key={reviews[activeIndex].id}
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                className="absolute w-full"
+                transition={{ duration: 0.5 }}
+              >
+                <p className="text-[#777777] text-lg text-center">
+                  {reviews[activeIndex].review}
+                </p>
+                <p className="text-center text-[#777777] text-[0.9375rem] mt-[0.6875rem]">
+                  {reviews[activeIndex].reviewer}
+                </p>
+              </motion.article>
             </AnimatePresence>
             <Button
               content="frequently asked questions"
-              styles=" max-w[26.1875rem] lg:w-[26.1875rem] mt-[2.25rem] px-4"
+              styles=" max-w[26.1875rem] lg:w-[26.1875rem] mt-[2.25rem] px-4 absolute bottom-0"
             />
           </div>
         </div>
