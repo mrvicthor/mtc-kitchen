@@ -6,6 +6,7 @@ import Banner from "./components/banner";
 import Features from "./components/features";
 import Reviews from "./components/reviews";
 import Galleries from "./components/gallery";
+import Footer from "./components/footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Reviews />
         <Galleries />
       </main>
+      <Footer />
     </>
   );
 }
