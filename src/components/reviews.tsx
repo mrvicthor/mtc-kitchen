@@ -42,41 +42,46 @@ const Reviews = () => {
 
   return (
     <section className="h-[37.5rem] flex flex-col items-center justify-center bg-[#eeeeee]">
-      <div className="flex items-center gap-12 px-4">
+      <div className="flex items-center gap-6 md:gap-12 px-4">
         <button className=" cursor-pointer " onClick={handlePrevious}>
           <img src={arrowLeft} alt="left arrow icon" />
         </button>
 
         <div className="flex flex-col max-w-[37.5rem]">
-          <p className="uppercase text-[0.8125rem] text-[#d4b254] md:text-center">
+          <p className="uppercase text-[0.8125rem] text-[#d4b254] text-center">
             what our customers say
           </p>
-          <p className="text-lg md:text-[2rem] text-[#222222] md:text-center">
+          <p className="text-2xl md:text-[2rem] text-[#222222] text-center">
             Over 35 years experience designing handmade kitchens
           </p>
-          <div className="mt-6 flex flex-col items-center relative overflow-hidden h-[18rem] lg:h-[12.6875rem]">
+          <motion.div
+            layout
+            className="mt-6 flex flex-col items-center relative overflow-hidden transition-all duration-500"
+          >
             <AnimatePresence mode="wait" custom={direction}>
-              <motion.article
+              <motion.div
                 key={reviews[activeIndex].id}
                 custom={direction}
                 variants={variants}
                 initial="enter"
                 animate="center"
                 exit="exit"
-                className="absolute w-full"
+                className="w-full"
                 transition={{ duration: 0.5 }}
               >
                 <p className="text-[#777777] text-lg text-center">
                   {reviews[activeIndex].review}
                 </p>
-                <p className="text-center text-[#777777] text-[0.9375rem] mt-[0.6875rem]">
+                <p className="text-center text-[#777777] text-[0.9375rem] mt-[0.6875rem] capitalize">
                   {reviews[activeIndex].reviewer}
                 </p>
-              </motion.article>
+              </motion.div>
             </AnimatePresence>
+          </motion.div>
+          <div className="flex justify-center">
             <Button
               content="frequently asked questions"
-              styles=" max-w[26.1875rem] lg:w-[26.1875rem] mt-[2.25rem] px-4 absolute bottom-0"
+              styles="max-w[26.1875rem] lg:w-[26.1875rem] mt-[2.25rem] px-4 text-xs py-2 md:h-15"
             />
           </div>
         </div>

@@ -24,7 +24,11 @@ const Header = () => {
         scrolled ? "bg-black" : "bg-transparent"
       } fixed top-0 w-full px-4 z-50`}
     >
-      <div className="max-w-[81.25rem] h-[3.4625rem]  md:h-[5.0625rem] mt-[1.875rem] mx-auto md:border-white md:border-b">
+      <div
+        className={`max-w-[81.25rem] h-[3.4625rem]  md:h-[5.0625rem] mt-[1.875rem] mx-auto ${
+          scrolled ? "" : "md:border-white md:border-b"
+        } `}
+      >
         <div className="md:hidden flex justify-between items-center">
           <button
             onClick={() => setShowmenu(!showMenu)}
@@ -45,9 +49,12 @@ const Header = () => {
           </a>
         </div>
         {showMenu && (
-          <div className="fixed top-[90px] bottom-0 md:hidden left-0 right-0 bg-[#979797] z-10 opacity-40" />
+          <div
+            onClick={() => setShowmenu(!showMenu)}
+            className="fixed top-[90px] bottom-0 md:hidden left-0 right-0 bg-[#979797] z-10 opacity-40"
+          />
         )}
-        <Menu showMenu={showMenu} />
+        <Menu showMenu={showMenu} handleMenu={setShowmenu} />
         <nav className="hidden md:flex justify-between items-center">
           <div className="flex gap-2 items-center">
             <a href="#">

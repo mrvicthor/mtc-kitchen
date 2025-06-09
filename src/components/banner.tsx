@@ -2,7 +2,7 @@ import Button from "./shared/button";
 
 const Banner = () => {
   return (
-    <section className="h-[56.25rem] w-full bg-[url('/src/assets/Homepage/hero-image.png')] bg-cover bg-no-repeat relative">
+    <section className="h-dvh w-full bg-[url('/src/assets/Homepage/hero-image.png')] bg-cover bg-no-repeat relative">
       <div className="max-w-[42.875rem] absolute left-[50%] -translate-x-[50%] top-[15.25rem]">
         <p className="text-center tracking-[3px] banner-text uppercase text-white text-[0.8125rem]">
           design and order your new kitchen online today

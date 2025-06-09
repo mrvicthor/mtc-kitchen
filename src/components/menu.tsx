@@ -5,8 +5,9 @@ import instagramIcon from "../assets/Homepage/icon-instagram.svg";
 
 type MenuProps = {
   showMenu: boolean;
+  handleMenu: React.Dispatch<React.SetStateAction<boolean>>;
 };
-const Menu = ({ showMenu }: MenuProps) => {
+const Menu = ({ showMenu, handleMenu }: MenuProps) => {
   const variants = {
     open: {
       transition: {
@@ -50,24 +51,28 @@ const Menu = ({ showMenu }: MenuProps) => {
             className="mt-12 flex flex-col gap-6 items-center md:hidden uppercase"
           >
             <motion.li
+              onClick={() => handleMenu(!showMenu)}
               variants={itemVariants}
               className="text-[#d4b254] hover:text-black"
             >
               <a href="#">shop</a>
             </motion.li>
             <motion.li
+              onClick={() => handleMenu(!showMenu)}
               variants={itemVariants}
               className="text-[#d4b254] hover:text-black"
             >
               <a href="#">plan my kitchen</a>
             </motion.li>
             <motion.li
+              onClick={() => handleMenu(!showMenu)}
               variants={itemVariants}
               className="text-[#d4b254] hover:text-black"
             >
               <a href="#">about us</a>
             </motion.li>
             <motion.li
+              onClick={() => handleMenu(!showMenu)}
               variants={itemVariants}
               className="text-[#d4b254] hover:text-black"
             >
@@ -77,21 +82,21 @@ const Menu = ({ showMenu }: MenuProps) => {
               variants={itemVariants}
               className="flex gap-3 items-center "
             >
-              <a href="#">
+              <a href="#" onClick={() => handleMenu(!showMenu)}>
                 <img
                   src={facebookIcon}
                   alt="facebook logo"
                   className="h-4 hover:text-[#d4b254]"
                 />
               </a>
-              <a href="#">
+              <a href="#" onClick={() => handleMenu(!showMenu)}>
                 <img
                   src={twitterIcon}
                   alt="twitter logo"
                   className="h-4 hover:text-[#d4b254]"
                 />
               </a>
-              <a href="#">
+              <a href="#" onClick={() => handleMenu(!showMenu)}>
                 <img
                   src={instagramIcon}
                   alt="instagram icon"

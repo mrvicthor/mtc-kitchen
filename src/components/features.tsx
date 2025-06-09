@@ -12,7 +12,7 @@ const Features = () => {
         <p className="text-[0.8125rem] text-[#d4b254] tracking-[3px] uppercase">
           Quality Craftmanship from build to delivery
         </p>
-        <h2 className="mt-[0.9375rem] text-[2.625rem] font-bold features-header tracking-[0px] text-[#222222]">
+        <h2 className="mt-[0.9375rem] text-2xl md:text-[2.625rem] font-bold features-header tracking-[0px] text-[#222222]">
           Discover the beauty of a handmade kitchen
         </h2>
         <p className="mt-8 text-[0.9375rem] features-description text-[#777777]">
