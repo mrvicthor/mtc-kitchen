@@ -8,7 +8,7 @@ const Features = () => {
         alt="kitchen image"
         className="h-full object-cover"
       />
-      <div className="flex flex-col justify-center px-4 pb-8 lg:px-0 lg:pb-0">
+      <div className="flex flex-col justify-center px-4 pb-8 lg:px-0 lg:pb-0 bg-white">
         <p className="text-[0.8125rem] text-[#d4b254] tracking-[3px] uppercase">
           Quality Craftmanship from build to delivery
         </p>
