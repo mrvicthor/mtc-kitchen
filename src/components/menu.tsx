@@ -2,35 +2,14 @@ import { AnimatePresence, motion } from "motion/react";
 import facebookIcon from "../assets/Homepage/icon-facebook.svg";
 import twitterIcon from "../assets/Homepage/icon-twitter.svg";
 import instagramIcon from "../assets/Homepage/icon-instagram.svg";
+import { containerVariants, itemVariants } from "../utils";
 
 type MenuProps = {
   showMenu: boolean;
   handleMenu: React.Dispatch<React.SetStateAction<boolean>>;
 };
-const Menu = ({ showMenu, handleMenu }: MenuProps) => {
-  const variants = {
-    open: {
-      transition: {
-        staggerChildren: 0.2,
-        staggerDirection: 1,
-      },
-    },
-    closed: {
-      transition: {
-        staggerChildren: 0.2,
-        staggerDirection: -1,
-      },
-    },
-  };
 
-  const itemVariants = {
-    open: {
-      opacity: 1,
-    },
-    closed: {
-      opacity: 0,
-    },
-  };
+const Menu = ({ showMenu, handleMenu }: MenuProps) => {
   return (
     <AnimatePresence>
       {showMenu && (
@@ -44,7 +23,7 @@ const Menu = ({ showMenu, handleMenu }: MenuProps) => {
           className={`md:hidden fixed h-[28rem] w-full bg-[#eeeeee] left-0 right-0 top-[4.9375rem] flex flex-col items-center z-[10000]`}
         >
           <motion.ul
-            variants={variants}
+            variants={containerVariants}
             initial="closed"
             animate="open"
             exit="closed"

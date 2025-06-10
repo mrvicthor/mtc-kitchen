@@ -1,26 +1,9 @@
 import kitchenLogo from "../assets/Homepage/features-image.png";
+import { container, item } from "../utils";
 import Button from "./shared/button";
 import { motion } from "motion/react";
-const Features = () => {
-  const container = {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
 
-  const item = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-  };
+const Features = () => {
   return (
     <section className="grid md:grid-cols-2 lg:h-[41.6875rem] gap-[4.375rem] features overflow-hidden">
       <img
@@ -34,7 +17,7 @@ const Features = () => {
         whileInView="visible"
         initial="hidden"
         viewport={{ once: true }}
-        className="flex flex-col justify-center px-4 pb-8 lg:px-0 lg:pb-0 bg-white"
+        className="flex flex-col justify-center px-4 pb-24 pt-6 lg:px-0 lg:pt-0 lg:pb-0 bg-white"
       >
         <motion.p
           variants={item}

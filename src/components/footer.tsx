@@ -5,7 +5,7 @@ import instagramIcon from "../assets/Homepage/icon-instagram.svg";
 
 const Footer = () => {
   return (
-    <footer className=" w-full bg-black flex justify-center opacity-90 px-4 overflow-hidden">
+    <footer className=" w-full bg-black/90 flex justify-center px-4 overflow-hidden">
       <div className="mx-auto max-w-screen-xl w-full py-10 space-y-12">
         <div className="flex items-center gap-8 flex-wrap">
           <div className="h-[1px] bg-white flex-1 min-w-[3.125rem]" />

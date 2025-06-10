@@ -2,6 +2,7 @@ import galleryImage4 from "../assets/Homepage/image-gallery-4.png";
 import galleryImage1 from "../assets/Homepage/image-gallery1.png";
 import galleryImage2 from "../assets/Homepage/image-gallery2.png";
 import galleryImage3 from "../assets/Homepage/image-gallery3.png";
+import { container, item } from "../utils";
 import Button from "./shared/button";
 import { motion } from "motion/react";
 
@@ -12,25 +13,7 @@ const Galleries = () => {
     galleryImage3,
     galleryImage4,
   ];
-  const container = {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
 
-  const item = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-  };
   return (
     <section className="py-[5.8125rem] flex justify-center px-4">
       <div className="flex flex-col items-center gap-10 w-[81.25rem]">

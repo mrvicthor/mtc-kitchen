@@ -1,26 +1,8 @@
+import { container, item } from "../utils";
 import Button from "./shared/button";
 import { motion } from "motion/react";
 
 const Banner = () => {
-  const container = {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-  };
   return (
     <section className="h-dvh w-full bg-[url('/src/assets/Homepage/hero-image.png')] bg-cover bg-no-repeat relative">
       <motion.div
@@ -46,7 +28,10 @@ const Banner = () => {
           >
             Bespoke & made to measure handmade kitchen design
           </h1>
-          <Button content="order now" />
+          <Button
+            content="order now"
+            styles="animate-pulse h-15 w-[14.25rem]"
+          />
         </motion.div>
       </motion.div>
       <div className="flex items-center justify-center gap-2 absolute bottom-[1.875rem] left-[50%] -translate-x-[50%]">
