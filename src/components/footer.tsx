@@ -107,16 +107,20 @@ const Footer = () => {
               </h3>
               <div className="flex gap-4 uppercase mt-[2.1875rem]">
                 <a href="#" className="hover:text-[#d4b254] text-[0.8125rem]">
-                  <img src={facebookIcon} alt="facebook logo" className="h-4" />
+                  <img
+                    src={facebookIcon}
+                    alt="facebook logo"
+                    className="h-10"
+                  />
                 </a>
                 <a href="#" className="hover:text-[#d4b254] text-[0.8125rem]">
-                  <img src={twitterIcon} alt="facebook logo" className="h-4" />
+                  <img src={twitterIcon} alt="facebook logo" className="h-10" />
                 </a>
                 <a href="#" className="hover:text-[#d4b254] text-[0.8125rem]">
                   <img
                     src={instagramIcon}
                     alt="facebook logo"
-                    className="h-4"
+                    className="h-10"
                   />
                 </a>
               </div>
