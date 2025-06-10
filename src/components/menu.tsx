@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "motion/react";
-import facebookIcon from "../assets/Homepage/icon-facebook.svg";
-import twitterIcon from "../assets/Homepage/icon-twitter.svg";
-import instagramIcon from "../assets/Homepage/icon-instagram.svg";
+import { FaFacebookF } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 import { containerVariants, itemVariants } from "../utils";
 
 type MenuProps = {
@@ -61,25 +61,34 @@ const Menu = ({ showMenu, handleMenu }: MenuProps) => {
               variants={itemVariants}
               className="flex gap-3 items-center "
             >
-              <a href="#" onClick={() => handleMenu(!showMenu)}>
-                <img
-                  src={facebookIcon}
-                  alt="facebook logo"
-                  className="h-4 hover:text-[#d4b254]"
+              <a
+                href="#"
+                onClick={() => handleMenu(!showMenu)}
+                className="group"
+              >
+                <FaFacebookF
+                  size={16}
+                  className="text-white group-hover:text-[#d4b254] transition-colors"
                 />
               </a>
-              <a href="#" onClick={() => handleMenu(!showMenu)}>
-                <img
-                  src={twitterIcon}
-                  alt="twitter logo"
-                  className="h-4 hover:text-[#d4b254]"
+              <a
+                href="#"
+                onClick={() => handleMenu(!showMenu)}
+                className="group"
+              >
+                <FaTwitter
+                  size={16}
+                  className="text-white group-hover:text-[#d4b254] transition-colors"
                 />
               </a>
-              <a href="#" onClick={() => handleMenu(!showMenu)}>
-                <img
-                  src={instagramIcon}
-                  alt="instagram icon"
-                  className="h-4 hover:text-[#d4b254]"
+              <a
+                href="#"
+                onClick={() => handleMenu(!showMenu)}
+                className="group"
+              >
+                <FaInstagram
+                  size={16}
+                  className="text-white group-hover:text-[#d4b254] transition-colors"
                 />
               </a>
             </motion.li>
