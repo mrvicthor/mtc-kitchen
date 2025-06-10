@@ -34,12 +34,18 @@ const Header = () => {
             onClick={() => setShowmenu(!showMenu)}
             className="hamburger block relative cursor-pointer md:hidden"
           >
-            <span className="sr-only" aria-expanded="false">
-              Menu
-            </span>
-            <span className="bars"></span>
-            <span className="bars"></span>
-            <span className="bars"></span>
+            {!showMenu ? (
+              <>
+                <span className="sr-only" aria-expanded="false">
+                  Menu
+                </span>
+                <span className="bars"></span>
+                <span className="bars"></span>
+                <span className="bars"></span>
+              </>
+            ) : (
+              <span className="font-bold text-2xl text-white">X</span>
+            )}
           </button>
           <a href="#">
             <img src={mhkLogo} alt="mhk logo" className="h-8" />

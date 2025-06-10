@@ -41,7 +41,7 @@ const Menu = ({ showMenu, handleMenu }: MenuProps) => {
             width: 0,
             transition: { delay: 0.7, duration: 0.3 },
           }}
-          className={`md:hidden fixed h-[24rem] w-full bg-[#eeeeee] left-0 right-0 top-[4.9375rem] flex flex-col items-center z-[10000]`}
+          className={`md:hidden fixed h-[28rem] w-full bg-[#eeeeee] left-0 right-0 top-[4.9375rem] flex flex-col items-center z-[10000]`}
         >
           <motion.ul
             variants={variants}
