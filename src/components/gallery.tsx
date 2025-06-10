@@ -16,7 +16,7 @@ const Galleries = () => {
 
   return (
     <section className="py-[5.8125rem] flex justify-center px-4">
-      <div className="flex flex-col items-center gap-10 w-[81.25rem]">
+      <div className="flex flex-col items-center gap-10 mx-auto max-w-screen-xl w-full">
         <h3 className="text-[2rem] capitalize text-[#222222] tracking-[0px] font-bold">
           customer gallery
         </h3>
