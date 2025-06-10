@@ -1,6 +1,6 @@
-import facebookIcon from "../assets/Homepage/icon-facebook.svg";
-import twitterIcon from "../assets/Homepage/icon-twitter.svg";
-import instagramIcon from "../assets/Homepage/icon-instagram.svg";
+import { FaFacebookF } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 import mhkLogo from "../assets/Homepage/mhk-logo.svg";
 import shoppingCartLogo from "../assets/Homepage/shopping-cart.png";
 import Menu from "./menu";
@@ -63,14 +63,23 @@ const Header = () => {
         <Menu showMenu={showMenu} handleMenu={setShowmenu} />
         <nav className="hidden md:flex justify-between items-center">
           <div className="flex gap-2 items-center">
-            <a href="#">
-              <img src={facebookIcon} alt="facebook logo" className="h-4" />
+            <a href="#" className="group">
+              <FaFacebookF
+                size={16}
+                className="text-white group-hover:text-[#d4b254] transition-colors"
+              />
             </a>
-            <a href="#">
-              <img src={twitterIcon} alt="twitter logo" className="h-4" />
+            <a href="#" className="group">
+              <FaTwitter
+                size={16}
+                className="text-white group-hover:text-[#d4b254] transition-colors"
+              />
             </a>
-            <a href="#">
-              <img src={instagramIcon} alt="instagram icon" className="h-4" />
+            <a href="#" className="group">
+              <FaInstagram
+                size={16}
+                className="text-white group-hover:text-[#d4b254] transition-colors"
+              />
             </a>
           </div>
           <div className="flex items-center gap-4 text-white uppercase">
