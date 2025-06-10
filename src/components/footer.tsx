@@ -102,7 +102,7 @@ const Footer = () => {
               </div>
             </div>
             <div>
-              <h3 className="text-2xl font-bold tracking-[0px] capitalize">
+              <h3 className="text-2xl font-bold tracking-[0px] capitalize text-center md:text-left">
                 follow
               </h3>
               <div className="flex gap-4 uppercase mt-[2.1875rem]">
